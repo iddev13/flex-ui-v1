@@ -1364,6 +1364,11 @@ body.mouse .select__list::-webkit-scrollbar-thumb:hover {
   }
 }
 
+.companies .swiper {
+  width: 100%;
+  height: 300px;
+}
+
 .colors {
   display: flex;
   display: -webkit-flex;
