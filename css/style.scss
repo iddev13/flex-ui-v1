@@ -1070,11 +1070,20 @@ body.mouse .button-sm {
 	line-height: 26px;
 	color: white;
 	transition: all 0.2s linear;
+	&-secondary {
+		background-color: var(--secondary-foreground);
+		color: var(--text);
+	}
 }
 
 body.mouse .button {
 	&:hover {
 		background: var(--primary-hover);
+	}
+	&-secondary {
+		&:hover {
+			color: var(--text-secondary);
+		}
 	}
 }
 
@@ -1697,6 +1706,246 @@ body.mouse {
 // =======================================
 // WAVE END
 // =======================================
+
+/*
+	SECTION
+*/
+.section {
+	padding: 50px 0;
+	@media (max-width: 768px) {
+		padding: 30px 0;
+	}
+	&__inner {
+		margin-bottom: 20px;
+		position: relative;
+	}
+	&__header {
+		margin-bottom: 60px;
+		@media (max-width: 768px) {
+			margin-bottom: 30px;
+		}
+		& > div {
+			@include flex;
+			align-items: center;
+			margin-bottom: 20px;
+		}
+		&-left {
+			& > div {
+				justify-content: flex-start;
+				.section__badge {
+					margin-right: auto !important;
+				}
+			}
+			.section__title,
+			.section__text {
+				text-align: left;
+			}
+		}
+		&-cta-padding {
+			padding-top: 155px;
+			@media (max-width: 768px) {
+				padding-top: 40px;
+			}
+		}
+	}
+	&__badge {
+		display: inline-block;
+		font-size: 12px;
+		line-height: 18px;
+		font-weight: 500;
+		background-color: var(--primary-foreground);
+		color: var(--primary);
+		border-radius: 36px;
+		text-transform: uppercase;
+		padding: 0 8px;
+		&-center {
+			margin: 0 auto;
+		}
+	}
+	&__title {
+		font-size: 36px;
+		font-weight: 700;
+		line-height: 44px;
+		letter-spacing: -0.02em;
+		text-align: center;
+		margin-bottom: 10px;
+		max-width: 910px;
+		width: 100%;
+		@media (max-width: 768px) {
+			font-size: 30px;
+			line-height: 34px;
+		}
+	}
+	&__text {
+		font-size: 20px;
+		font-weight: 500;
+		line-height: 30px;
+		text-align: center;
+		color: var(--muted-foreground);
+		max-width: 910px;
+		width: 100%;
+	}
+	&__grid {
+		@include flex;
+		flex-wrap: wrap;
+	}
+	&__card {
+		flex-basis: 33.33333%;
+		@media (max-width: 768px) {
+			flex-basis: 50%;
+		}
+		@media (max-width: 535px) {
+			flex-basis: 100%;
+		}
+	}
+	&-secondary-foreground {
+		background-color: var(--secondary-foreground);
+	}
+	&-cta-margin {
+		margin-bottom: 225px;
+		@media (max-width: 768px) {
+			margin-bottom: 125px;
+		}
+	}
+}
+
+.card-section {
+	@include flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 20px 0;
+	@media (max-width: 768px) {
+		padding: 10px 0;
+	}
+
+	&__icon {
+		width: 64px;
+		height: 64px;
+		border-radius: 6px;
+		background-color: var(--primary);
+		@include flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 25px;
+		& svg {
+			position: absolute;
+			width: 24px;
+			height: 24px;
+			fill: white;
+		}
+	}
+	&__content {
+		margin-bottom: 25px;
+	}
+	&__title {
+		font-size: 24px;
+		font-weight: 700;
+		line-height: 32px;
+		text-align: center;
+		margin-bottom: 15px;
+		@media (max-width: 768px) {
+			font-size: 22px;
+			line-height: 28px;
+		}
+	}
+	&__text {
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 24px;
+		text-align: center;
+		max-width: 250px;
+		margin: 0 auto;
+		color: var(--muted-foreground);
+	}
+}
+
+/*
+	SECTION END
+*/
+
+/*
+	CTA
+*/
+.cta {
+	margin-top: -195px;
+	background-color: var(--secondary);
+	border-radius: 6px;
+	&__inner {
+		@include flex();
+		align-items: center;
+		@media (max-width: 920px) {
+			flex-direction: column;
+		}
+	}
+	&__left,
+	&__right {
+		flex-basis: 50%;
+		padding: 65px;
+		@media (max-width: 920px) {
+			padding: 35px;
+		}
+		&__left {
+			@media (max-width: 768px) {
+				padding-bottom: 0;
+			}
+		}
+	}
+	&__right {
+		@include flex();
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		@media (max-width: 768px) {
+			padding-top: 0;
+		}
+	}
+	h4 {
+		font-size: 36px;
+		font-weight: 700;
+		line-height: 44px;
+		color: var(--text-secondary);
+		margin-bottom: 15px;
+		text-align: center;
+		@media (max-width: 535px) {
+			font-size: 26px;
+			line-height: 34px;
+		}
+	}
+	p {
+		font-size: 20px;
+		font-weight: 500;
+		line-height: 30px;
+		color: var(--muted-foreground);
+		text-align: center;
+	}
+}
+/*
+	CTA END
+*/
+/*
+	
+*/
+/*
+ 	END
+*/
+/*
+	
+*/
+/*
+ END
+*/
+/*
+	
+*/
+/*
+ END
+*/
+/*
+	
+*/
+/*
+ END
+*/
 
 .colors {
 	@include flex;
