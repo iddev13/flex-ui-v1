@@ -26,6 +26,14 @@ function isElementInView(el) {
 	return rect.top >= 0 && rect.bottom <= window.innerHeight - 10;
 }
 
+const insertIframes = () => {
+	const mapBlock = document.querySelector('.map');
+	mapBlock.innerHTML = `<iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d539.2229870277196!2d36.231597488970905!3d49.992773485942514!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a0f07183da57%3A0xcda1d17154a2b99f!2z0JjRgdGC0L7RgNC40YfQtdGB0LrQuNC5INCc0YPQt9C10Lk!5e0!3m2!1sru!2sua!4v1597329829618!5m2!1sru!2sua"
+        width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+        tabindex="0"></iframe>`;
+};
+
 window.addEventListener('scroll', () => {
 	if (isElementInView(counter) && !isScrolled) {
 		counterFunc();
@@ -33,11 +41,3 @@ window.addEventListener('scroll', () => {
 		isScrolled = true;
 	}
 });
-
-// const insertIframes = () => {
-// 	const videoBlock = document.querySelector('.hiw-video');
-// 	const mapBlock = document.querySelector('.map');
-// 	videoBlock.innerHTML = `<iframe class="iframe" src="https://www.youtube.com/embed/zKNoU2P0dQc" frameborder="0"
-//       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-//       allowfullscreen></iframe>`;
-// };
