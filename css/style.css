@@ -329,11 +329,6 @@ ol {
      -moz-user-select: none;
           user-select: none;
 }
-@media (max-width: 950px) {
-  .header__item:not(:last-child) {
-    margin: 0px 0px 20px 0px;
-  }
-}
 .header__link {
   display: flex;
   display: -webkit-flex;
@@ -455,13 +450,6 @@ body.mouse .sub-menu__arrow::after {
 }
 body.mouse .sub-menu__arrow.active::before, body.mouse .sub-menu__arrow.active::after {
   background: white;
-}
-
-body.touch .header__link {
-  padding: 10px 3px 10px 15px;
-}
-body.touch .header__link.parent {
-  margin: 0px 25px 0px 0px;
 }
 
 .nav {
@@ -787,13 +775,16 @@ body.touch .arrow {
 .header__fixed {
   position: fixed;
   width: 100%;
-  min-height: 50px;
   top: 0;
   left: 0;
-  z-index: 1000;
   animation: show__header 1s;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.342);
+}
+@media (min-width: 950px) {
+  .header__fixed .sub-menu {
+    padding: 40px 0 0 0;
+  }
 }
 
 .scrolled-page .top-header {
@@ -1217,6 +1208,12 @@ body.mouse .select__list::-webkit-scrollbar-thumb:hover {
   text-align: center;
   margin: 0 auto;
 }
+.intro h1.anim-active,
+.intro h2.anim-active,
+.intro p.anim-active {
+  transform: translate(0);
+  opacity: 1;
+}
 .intro h1 {
   font-size: 60px;
   font-weight: 700;
@@ -1224,6 +1221,9 @@ body.mouse .select__list::-webkit-scrollbar-thumb:hover {
   color: var(--text-secondary);
   max-width: 715px;
   margin-bottom: 20px;
+  opacity: 0;
+  transform: translate(0, -80%);
+  transition: all 0.5s ease;
 }
 @media (max-width: 768px) {
   .intro h1 {
@@ -1237,6 +1237,8 @@ body.mouse .select__list::-webkit-scrollbar-thumb:hover {
   line-height: 30px;
   max-width: 715px;
   margin-bottom: 10px;
+  opacity: 0;
+  transition: all 0.6s ease;
 }
 @media (max-width: 768px) {
   .intro h2 {
@@ -1294,6 +1296,9 @@ body.mouse .select__list::-webkit-scrollbar-thumb:hover {
   font-weight: 500;
   line-height: 20px;
   max-width: 715px;
+  opacity: 0;
+  transform: translate(0, 80%);
+  transition: all 0.7s ease;
 }
 
 .intro-top-left,
@@ -1377,6 +1382,11 @@ body.mouse .select__list::-webkit-scrollbar-thumb:hover {
     width: 80px;
     height: 80px;
   }
+}
+
+.intro h1 .anim-active {
+  transform: translate(0);
+  opacity: 1;
 }
 
 .companies {
@@ -2311,7 +2321,7 @@ COUNTER END
 .colors {
   display: flex;
   display: -webkit-flex;
-  height: 102px;
+  height: 62px;
   align-items: center;
   position: fixed;
   top: 50%;
@@ -2323,11 +2333,6 @@ COUNTER END
   transition: all 0.3s ease;
   overflow: hidden;
 }
-@media (max-width: 768px) {
-  .colors {
-    height: 62px;
-  }
-}
 .colors__coll {
   display: flex;
   display: -webkit-flex;
@@ -2336,7 +2341,7 @@ COUNTER END
 .colors__icon {
   display: inline-block;
   flex: 0 0 50px;
-  width: 50px;
+  width: 30px;
   height: 100%;
   position: relative;
   background: white;
@@ -2399,7 +2404,7 @@ COUNTER END
 
 .colors-active {
   left: 100%;
-  transform: translate(-100%, 50%);
+  transform: translate(-100%, -50%);
 }
 .colors-active .icon-colors {
   background: #333;
