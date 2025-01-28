@@ -857,7 +857,7 @@ body.touch .scrolled-page .big-menu, body.touch .scrolled-page .gallery, body.to
 }
 
 .button-sm {
-  display: inline-lex;
+  display: inline-flex;
   padding: 10px 15px;
   border-radius: 6px;
   text-transform: capitalize;
