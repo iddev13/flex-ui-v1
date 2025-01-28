@@ -1062,8 +1062,8 @@ body.mouse .button-sm {
 	color: white;
 	transition: all 0.2s linear;
 	&-secondary {
-		background-color: var(--secondary-foreground);
-		color: var(--text);
+		background-color: #f7f8f9;
+		color: black;
 	}
 }
 
@@ -1073,7 +1073,7 @@ body.mouse .button {
 	}
 	&-secondary {
 		&:hover {
-			color: var(--text-secondary);
+			color: white;
 		}
 	}
 }
@@ -2134,7 +2134,7 @@ COUNTER END
 		font-weight: 700;
 		line-height: 60px;
 		letter-spacing: -0.02em;
-		color: var(--text);
+		color: white;
 		margin-bottom: 20px;
 	}
 	&__text {
@@ -2227,7 +2227,7 @@ COUNTER END
 		font-size: 20px;
 		font-weight: 700;
 		line-height: 30px;
-		color: var(--text);
+		color: white;
 		margin-bottom: 15px;
 	}
 	&__text {
